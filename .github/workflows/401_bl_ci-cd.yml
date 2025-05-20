@@ -34,8 +34,8 @@ jobs:
     - name: Restore CICD Tools
       run: |-
         dotnet tool restore
-        echo Displaying environment variables
-        SET
+        # echo Displaying environment variables
+        # SET
     - name: Restore dotnet tools
       run: dotnet tool restore            
     - name: Build and Tests
