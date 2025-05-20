@@ -18,7 +18,7 @@ branches:
     pre-release-weight: 30000
   feature:
     tag: alpha
-    increment: Minor
+    increment: Minor #1
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^feature[/-]
