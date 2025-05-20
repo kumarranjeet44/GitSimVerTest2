@@ -19,7 +19,7 @@ branches:
     tracks-release-branches: true
     is-release-branch: false
     is-main-branch: false
-    pre-release-weight:    
+    pre-release-weight: 0    
   bugfix:
     tag: alpha
     increment: Inherit
