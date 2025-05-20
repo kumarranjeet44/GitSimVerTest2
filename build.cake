@@ -148,7 +148,8 @@ Task("Tagmaster").Does(() => {
     string branchTag;
     if (gitVersion.BranchName == "master")
     {
-        branchTag = $"v{gitVersion.MajorMinorPatch}.{gitVersion.CommitsSinceVersionSource}";
+        //branchTag = $"v{gitVersion.MajorMinorPatch}.{gitVersion.CommitsSinceVersionSource}";
+        branchTag = "v4.1.0.37";
     }
     else if (gitVersion.BranchName == "develop")
     {
