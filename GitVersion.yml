@@ -6,16 +6,14 @@ branches:
     mode: ContinuousDelivery
   develop:
     mode: ContinuousDelivery
-    label: alpha
+    tag: alpha
     increment: Minor
-    prevent-increment:
-      when-current-commit-tagged: false
+    prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     track-merge-message: true
     regex: ^dev(elop)?(ment)?$
     source-branches:
     - main
-    is-source-branch-for: []
     tracks-release-branches: true
     is-release-branch: false
     is-main-branch: false
