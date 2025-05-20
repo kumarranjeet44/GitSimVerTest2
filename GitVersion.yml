@@ -11,9 +11,9 @@ branches:
     prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     track-merge-message: true
-    regex: ^dev(elop)?(ment)?$
+    regex: ^dev(elop)?[/-]
     source-branches:
-    - main
+    - master
     tracks-release-branches: true
     is-release-branch: false
     is-main-branch: false
