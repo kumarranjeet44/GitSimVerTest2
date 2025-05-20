@@ -38,10 +38,6 @@ var gitUserPassword = Argument("gituserpassword", "PROVIDED_BY_GITHUB");
 var zipPath = new DirectoryPath("./artifact");
 
 var EXG401UIAssemblyVersion = completeVersionForWix;
-Information("Version (401 BL Application): {0}", completeVersionForWix); 
-Information("BranchName: {0}", gitVersion.BranchName);
-
-
 
 Task("Clean").Does(() => {
 	CleanDirectories("./artifact");
@@ -129,6 +125,8 @@ Task("Tagmaster").Does(() => {
     Information("GitVersion details: {0}", JsonConvert.SerializeObject(gitVersion, Formatting.Indented));
 
     //List and check existing tags
+    Information("Version (401 BL Application): {0}", completeVersionForWix); 
+    Information("BranchName: {0}", gitVersion.BranchName);
     Information("Previous Releases:");
     var currentTags = GitTags(".");
     foreach(var tag in currentTags)
