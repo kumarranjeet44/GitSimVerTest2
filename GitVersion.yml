@@ -30,7 +30,7 @@ branches:
     pre-release-weight: 30000
   hostfix:
     tag: hostfix
-    increment: Patch
+    increment: Inherit
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^hostfix[/-]
@@ -42,7 +42,7 @@ branches:
     pre-release-weight: 30000
   release:
     tag: beta
-    increment: Minor
+    increment: Inherit
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^release[/-]
