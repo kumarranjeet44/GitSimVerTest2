@@ -154,6 +154,14 @@ Task("Tagmaster").Does(() => {
     {
         branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.CommitsSinceVersionSource}";
     }
+    else if (gitVersion.BranchName.StartsWith("release/"))
+    {
+        branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.CommitsSinceVersionSource}";
+    }
+    else if (gitVersion.BranchName.StartsWith("hotfix/"))
+    {
+        branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.CommitsSinceVersionSource}";
+    }
     else
     {
         throw new Exception($"Branch '{gitVersion.BranchName}' is not supported for tagging.");
