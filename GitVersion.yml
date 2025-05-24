@@ -1,16 +1,29 @@
 assembly-versioning-scheme: MajorMinorPatch
 assembly-file-versioning-format: '{Major}.{Minor}.{Patch}.{CommitsSinceVersionSource}'
+mode: ContinuousDeployment
 branches:
   master:
     mode: ContinuousDelivery  
-  develop:
+  bugfix:
     tag: alpha
     increment: Inherit
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
-    regex: ^develop(es)?[/-]
+    regex: ^bugfix(es)?[/-]
     source-branches:
-    - master
+    - develop
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 30000
+  feature:
+    tag: alpha
+    increment: Inherit #4
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+    regex: ^feature[/-]
+    source-branches:
+    - develop
     tracks-release-branches: false
     is-release-branch: false
     is-mainline: false
