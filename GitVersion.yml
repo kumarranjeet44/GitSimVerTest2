@@ -4,26 +4,14 @@ mode: ContinuousDeployment
 branches:
   master:
     mode: ContinuousDelivery  
-  bugfix:
+  develop:
     tag: alpha
     increment: Inherit
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
-    regex: ^bugfix(es)?[/-]
+    regex: ^develop(es)?[/-]
     source-branches:
-    - develop
-    tracks-release-branches: false
-    is-release-branch: false
-    is-mainline: false
-    pre-release-weight: 30000
-  feature:
-    tag: alpha
-    increment: Inherit #4
-    prevent-increment-of-merged-branch-version: false
-    track-merge-target: false
-    regex: ^feature[/-]
-    source-branches:
-    - develop
+    - master
     tracks-release-branches: false
     is-release-branch: false
     is-mainline: false
