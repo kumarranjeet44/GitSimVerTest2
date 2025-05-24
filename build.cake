@@ -134,9 +134,9 @@ Task("Tagmaster").Does(() => {
         Information(tag.FriendlyName);
     }
     //comment below line to consider all branches
-    if (gitVersion.BranchName != "master" && gitVersion.BranchName != "develop")
+    if (gitVersion.BranchName != "master" && gitVersion.BranchName != "develop" && !gitVersion.BranchName.StartsWith("release/") && !gitVersion.BranchName.StartsWith("hotfix/"))
     {
-        Information($"Current branch '{gitVersion.BranchName}' is not master or develop. Skipping tagging.");
+        Information($"Current branch '{gitVersion.BranchName}' is not master/develop/releaes/hotfix. Skipping tagging.");
         return;
     }
     if(string.IsNullOrEmpty(gitUserName) || string.IsNullOrEmpty(gitUserPassword) ||
