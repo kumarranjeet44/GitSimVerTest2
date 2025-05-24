@@ -1,6 +1,5 @@
 assembly-versioning-scheme: MajorMinorPatch
 assembly-file-versioning-format: '{Major}.{Minor}.{Patch}.{CommitsSinceVersionSource}'
-mode: ContinuousDeployment
 branches:
   master:
     mode: ContinuousDelivery  
