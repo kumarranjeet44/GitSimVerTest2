@@ -6,7 +6,7 @@ branches:
     mode: ContinuousDelivery  
   bugfix:
     tag: alpha
-    increment: Inherit
+    increment: Patch
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^bugfix(es)?[/-]
@@ -18,7 +18,7 @@ branches:
     pre-release-weight: 30000
   feature:
     tag: alpha
-    increment: Inherit #4
+    increment: Minor
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^feature[/-]
@@ -30,7 +30,7 @@ branches:
     pre-release-weight: 30000
   hostfix:
     tag: hostfix
-    increment: Inherit
+    increment: Patch
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^hostfix[/-]
