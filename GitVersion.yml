@@ -5,15 +5,14 @@ branches:
   master:
     mode: ContinuousDelivery  
   develop:
-    mode: ContinuousDelivery
-    increment: Inherit
     tag: alpha
+    increment: Inherit    
     prevent-increment-of-merged-branch-version: false
-    track-merge-target: true
+    track-merge-target: false
     regex: ^dev(elop)?[/-]?
     source-branches:
     - master
-    tracks-release-branches: true
+    tracks-release-branches: false
     is-release-branch: false
     is-mainline: false
     pre-release-weight: 30000
