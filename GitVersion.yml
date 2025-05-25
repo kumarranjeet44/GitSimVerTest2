@@ -4,18 +4,6 @@ mode: ContinuousDeployment
 branches:
   master:
     mode: ContinuousDelivery  
-  develop:
-    increment: Inherit
-    tag: alpha
-    prevent-increment-of-merged-branch-version: false
-    track-merge-target: true
-    regex: ^dev(elop)?[/-]?
-    source-branches:
-    - master
-    tracks-release-branches: true
-    is-release-branch: false
-    is-mainline: false
-    pre-release-weight: 0
   bugfix:
     tag: alpha
     increment: Patch
