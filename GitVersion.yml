@@ -4,7 +4,6 @@ branches:
   master:
     mode: ContinuousDelivery  
   develop:
-    mode: ContinuousDeployment
     tag: alpha
     increment: Inherit    
     prevent-increment-of-merged-branch-version: false
