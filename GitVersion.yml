@@ -4,17 +4,6 @@ mode: ContinuousDeployment
 branches:
   master:
     mode: ContinuousDelivery  
-  develop:
-    increment: Inherit
-    tag: alpha
-    prevent-increment-of-merged-branch-version: false
-    track-merge-target: false
-    source-branches:
-    - master
-    tracks-release-branches: false
-    is-release-branch: false
-    is-mainline: false
-    pre-release-weight: 30000
   bugfix:
     tag: alpha
     increment: Patch
