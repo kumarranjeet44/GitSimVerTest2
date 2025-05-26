@@ -150,15 +150,11 @@ Task("Tagmaster").Does(() => {
     {
         branchTag = $"v{gitVersion.MajorMinorPatch}.{gitVersion.CommitsSinceVersionSource}";
     }
-    else if (gitVersion.BranchName == "develop")
-    {
-        branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.CommitsSinceVersionSource}";
-    }
-    else if (gitVersion.BranchName.StartsWith("release/"))
-    {
-        branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.CommitsSinceVersionSource}";
-    }
-    else if (gitVersion.BranchName.StartsWith("hotfix/"))
+    else if (
+        gitVersion.BranchName == "develop" ||
+        gitVersion.BranchName.StartsWith("release/") ||
+        gitVersion.BranchName.StartsWith("hotfix/")
+    )
     {
         branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.CommitsSinceVersionSource}";
     }
