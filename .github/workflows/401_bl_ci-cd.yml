@@ -32,7 +32,9 @@ jobs:
     - name: Reset build agent
       run: dotnet build-server shutdown
     - name: Restore CICD Tools  
-      run: dotnet tool restore            
+      run: dotnet tool restore 
+    - name: Restore bootstr  
+      run: dotnet cake --bootstr                
     - name: Build and Tests
       run: dotnet cake --do=full --gitusername=${{ env.gitusername }} --gituserpassword=${{ env.gituserpassword }}
     - name: Tag Feature Branch
