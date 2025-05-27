@@ -5,6 +5,7 @@ branches:
   master:
     mode: ContinuousDelivery  
   bugfix:
+    mode: ManualDeployment 
     tag: alpha
     increment: Patch
     prevent-increment-of-merged-branch-version: false
@@ -17,6 +18,7 @@ branches:
     is-mainline: false
     pre-release-weight: 30000
   feature:
+    mode: ManualDeployment   
     tag: alpha
     increment: Minor
     prevent-increment-of-merged-branch-version: false
