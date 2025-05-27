@@ -32,6 +32,11 @@ jobs:
     - name: Reset build agent
       run: dotnet build-server shutdown
     - name: Restore CICD Tools
+    - name: GitVersion
+      run: |
+        GitVersion /showvariable AssemblySemVer > version.txt
+        set /p SEM_VER=<version.txt
+        echo fullSemVer=%SEM_VER%>> %GITHUB_ENV%    
       run: dotnet tool restore            
     - name: Build and Tests
       run: dotnet cake --do=full --gitusername=${{ env.gitusername }} --gituserpassword=${{ env.gituserpassword }}
