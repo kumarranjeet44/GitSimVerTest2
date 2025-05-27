@@ -198,24 +198,13 @@ Task("Tagmaster").Does(() => {
     }
 });
 
-Task("GitVersion").Does(() => {
-    // Run GitVersion and capture AssemblySemVer
-    var result = StartProcess("GitVersion", new ProcessSettings {
-        Arguments = "/showvariable AssemblySemVer",
-        RedirectStandardOutput = true
-    });
-    var versionFile = File("version.txt");
-    if (result != 0)
-    {
-        Error("GitVersion failed to run.");
-        Environment.Exit(1);
-    }
-    // Read the output and write to version.txt
-    var output = GetProcessStandardOutput("GitVersion");
-    System.IO.File.WriteAllText(versionFile.Path.FullPath, output);
-    Information($"AssemblySemVer: {output}");
-    // Optionally, set as environment variable for later steps
-    EnvironmentVariable("fullSemVer", output.Trim());
+Task("GitVersion")
+    .Does(() =>
+{
+    var semVer = gitVersion.AssemblySemVer;
+    // Write the version to a file (like version.txt)
+    System.IO.File.WriteAllText("version.txt", semVer);
+    Information("AssemblySemVer: {0}", semVer);
 });
 
 Task("full")
