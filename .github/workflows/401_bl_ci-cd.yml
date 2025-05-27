@@ -35,3 +35,9 @@ jobs:
       run: dotnet tool restore            
     - name: Build and Tests
       run: dotnet cake --do=full --gitusername=${{ env.gitusername }} --gituserpassword=${{ env.gituserpassword }}
+    - name: Tag Feature Branch
+      if: ${{ startsWith(github.ref, 'refs/heads/feature/') }}
+      run: |
+        echo "Tagging Commit ${{ github.sha }} with Version ${{ env.VERSION }}"
+        git tag -f ${{ env.VERSION }}
+        git push origin ${{ env.VERSION }}
