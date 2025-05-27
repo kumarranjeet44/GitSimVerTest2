@@ -1,5 +1,5 @@
 #tool "nuget:?package=NuGet.CommandLine&version=5.5.1"
-#tool "nuget:?package=GitVersion.CommandLine&version=6.1.0"
+#tool "nuget:?package=GitVersion.CommandLine&version=6.3.0"
 #tool "nuget:?package=OpenCover&version=4.7.922"
 #addin "nuget:?package=Cake.Curl&version=4.1.0"
 #addin "nuget:?package=Cake.Git&version=1.0.1"
