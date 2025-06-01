@@ -20,7 +20,7 @@ env:
 jobs:
   Build-401-BL-Continuous-Integration:
     runs-on: self-hosted
-    if: true # set if condition to false to skip the current job this is releas branch changes, this is the first commint on 002 branch
+    if: true # set if condition to false to skip the current job this is releas branch changes, this is the 2nd commint on 002 branch
     defaults:
       run:
         shell: cmd
