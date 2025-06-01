@@ -156,7 +156,7 @@ Task("Tagmaster").Does(() => {
         gitVersion.BranchName.StartsWith("hotfix/")
     )
     {
-        branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.CommitsSinceVersionSource}";
+        branchTag = $"v{gitVersion.MajorMinorPatch}-{gitVersion.PreReleaseLabel}.{gitVersion.PreReleaseNumber}";
     }
     else
     {
